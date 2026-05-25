@@ -4,109 +4,148 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WebサイトUI違和感クイズ</title>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8398161859137802"
+crossorigin="anonymous"></script>
+
 <style>
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   background:linear-gradient(135deg,#0f172a,#1e293b);
   color:#fff;
 }
+
 header{
   padding:26px 16px;
   text-align:center;
   background:linear-gradient(135deg,#2563eb,#7c3aed);
 }
-header h1{margin:0;font-size:28px}
-header p{margin:8px 0 0;color:#e0e7ff}
+
+header h1{
+  margin:0;
+  font-size:30px;
+}
+
+header p{
+  margin-top:8px;
+  color:#dbeafe;
+}
+
 .container{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
   padding:20px;
 }
+
 .status{
   display:flex;
   justify-content:space-between;
-  gap:12px;
-  margin-bottom:16px;
   flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:18px;
 }
+
 .badge{
   background:#111827;
-  border:1px solid #334155;
+  padding:12px 16px;
   border-radius:999px;
-  padding:10px 14px;
+  border:1px solid #334155;
 }
+
 .game{
   display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:18px;
+  grid-template-columns:1.2fr .8fr;
+  gap:20px;
 }
+
 .card{
   background:#020617;
   border:1px solid #334155;
   border-radius:20px;
   padding:18px;
-  box-shadow:0 20px 60px rgba(0,0,0,.25);
+  box-shadow:0 10px 40px rgba(0,0,0,.3);
 }
+
 .mock-site{
   background:#f8fafc;
   color:#111827;
   border-radius:18px;
   overflow:hidden;
-  min-height:430px;
   border:4px solid #334155;
+  min-height:450px;
 }
+
 .mock-header{
-  padding:18px;
   background:#2563eb;
   color:white;
+  padding:18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
-.logo{font-weight:800;font-size:22px}
+
+.logo{
+  font-size:24px;
+  font-weight:900;
+}
+
 .nav span{
   margin-left:16px;
   font-size:14px;
 }
+
 .mock-main{
   padding:24px;
 }
+
 .hero{
-  background:#e0f2fe;
+  background:#dbeafe;
   padding:24px;
   border-radius:16px;
   margin-bottom:20px;
 }
-.hero h2{margin-top:0;font-size:26px}
+
+.hero h2{
+  margin-top:0;
+  font-size:28px;
+}
+
 .btn{
   display:inline-block;
   padding:12px 18px;
-  border-radius:10px;
   background:#2563eb;
-  color:#fff;
+  color:white;
+  border-radius:12px;
   font-weight:700;
 }
+
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:14px;
 }
+
 .item{
   background:white;
   border:1px solid #cbd5e1;
   border-radius:14px;
   padding:16px;
-  min-height:110px;
 }
-.item h3{margin:0 0 8px}
-.item p{font-size:14px;color:#475569}
+
+.item h3{
+  margin-top:0;
+}
+
 .question{
-  font-size:20px;
-  font-weight:800;
-  margin-bottom:14px;
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:12px;
 }
+
 .choice{
   width:100%;
   padding:14px;
@@ -115,20 +154,32 @@ header p{margin:8px 0 0;color:#e0e7ff}
   border-radius:14px;
   background:#1e293b;
   color:white;
-  text-align:left;
   font-size:15px;
+  text-align:left;
   cursor:pointer;
+  transition:.2s;
   border:1px solid #334155;
 }
-.choice:hover{background:#334155}
-.choice.correct{background:#16a34a}
-.choice.wrong{background:#dc2626}
+
+.choice:hover{
+  background:#334155;
+}
+
+.choice.correct{
+  background:#16a34a;
+}
+
+.choice.wrong{
+  background:#dc2626;
+}
+
 .explain{
-  margin-top:14px;
-  line-height:1.7;
+  margin-top:16px;
+  line-height:1.8;
   color:#cbd5e1;
 }
-button.next{
+
+.next{
   width:100%;
   margin-top:16px;
   padding:14px;
@@ -139,105 +190,179 @@ button.next{
   font-weight:900;
   cursor:pointer;
 }
+
 .result{
   text-align:center;
-  padding:30px;
+  padding:40px;
 }
-.result h2{font-size:32px}
+
+.result h2{
+  font-size:34px;
+}
+
 .restart{
-  padding:14px 22px;
+  margin-top:20px;
+  padding:14px 24px;
   border:none;
   border-radius:999px;
   background:#22c55e;
   color:white;
-  font-weight:800;
+  font-size:16px;
+  font-weight:900;
   cursor:pointer;
 }
-@media(max-width:850px){
-  .game{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr}
-  .nav span{display:none}
+
+.ad-box{
+  margin:20px auto;
+  padding:10px;
+  background:#111827;
+  border:1px dashed #475569;
+  border-radius:16px;
+  min-height:90px;
+}
+
+@media(max-width:900px){
+
+  .game{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .nav span{
+    display:none;
+  }
+
 }
 </style>
 </head>
+
 <body>
 
 <header>
   <h1>WebサイトUI違和感クイズ</h1>
-  <p>表示されたWebサイトの「おかしい場所」を当てよう</p>
+  <p>どこが使いにくい？ UIの違和感を見抜こう！</p>
 </header>
 
+<!-- 上広告 -->
 <div class="container">
+<div class="ad-box">
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-8398161859137802"
+    data-ad-slot="5599163841"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+</div>
+</div>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div class="container">
+
   <div class="status">
     <div class="badge" id="count">問題 1 / 10</div>
     <div class="badge" id="score">スコア 0</div>
   </div>
 
   <div id="app"></div>
+
+</div>
+
+<!-- 下広告 -->
+<div class="container">
+<div class="ad-box">
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-8398161859137802"
+    data-ad-slot="5599163841"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+</div>
 </div>
 
 <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script>
+
 const questions = [
-  {
-    title:"ECサイトの違和感はどこ？",
-    type:"price",
-    answer:"価格表示が不自然",
-    explain:"商品価格が目立たない、税込・送料などの情報が分かりにくいと、購入前に不安になります。ECでは価格・送料・購入ボタンの視認性が重要です。"
-  },
-  {
-    title:"企業サイトの違和感はどこ？",
-    type:"contact",
-    answer:"問い合わせボタンが見つけにくい",
-    explain:"企業サイトでは問い合わせ・資料請求などの導線が重要です。ボタンが小さい、色が弱い、場所が下すぎると離脱につながります。"
-  },
-  {
-    title:"ブログ記事ページの違和感はどこ？",
-    type:"text",
-    answer:"本文の文字が小さすぎる",
-    explain:"文字が小さいとスマホで読みづらく、滞在時間が下がりやすくなります。本文は読みやすいサイズと行間が大切です。"
-  },
-  {
-    title:"予約サイトの違和感はどこ？",
-    type:"button",
-    answer:"予約ボタンの色が背景と同化している",
-    explain:"予約・購入・登録など重要なボタンは、背景と差がある色にして目立たせる必要があります。"
-  },
-  {
-    title:"サービス紹介ページの違和感はどこ？",
-    type:"nav",
-    answer:"ナビゲーションの項目が多すぎる",
-    explain:"メニューが多すぎると、ユーザーはどこを押せばいいか迷います。重要な項目に絞ると使いやすくなります。"
-  },
-  {
-    title:"LPの違和感はどこ？",
-    type:"hero",
-    answer:"最初に何のサイトか分かりにくい",
-    explain:"LPではファーストビューで『誰向けに何を提供するのか』がすぐ伝わる必要があります。"
-  },
-  {
-    title:"ログイン画面の違和感はどこ？",
-    type:"form",
-    answer:"入力欄のラベルが分かりにくい",
-    explain:"フォームでは『何を入力するのか』が一目で分かることが重要です。ラベルや例文がないと入力ミスが増えます。"
-  },
-  {
-    title:"ニュースサイトの違和感はどこ？",
-    type:"ad",
-    answer:"広告が本文より目立ちすぎる",
-    explain:"広告が強すぎると、ユーザーは記事本文を読む前に離脱しやすくなります。広告と本文のバランスが大切です。"
-  },
-  {
-    title:"スマホサイトの違和感はどこ？",
-    type:"tap",
-    answer:"押せる場所が小さすぎる",
-    explain:"スマホではタップ領域が小さいと操作ミスが起きます。ボタンやリンクは十分な大きさが必要です。"
-  },
-  {
-    title:"ランキングサイトの違和感はどこ？",
-    type:"rank",
-    answer:"1位の理由が書かれていない",
-    explain:"ランキングでは順位だけでなく、なぜその順位なのかの理由が重要です。理由がないと信頼されにくくなります。"
-  }
+
+{
+title:"ECサイトの違和感はどこ？",
+type:"price",
+answer:"価格表示が不自然",
+explain:"価格や送料が分かりにくいと離脱率が上がります。"
+},
+
+{
+title:"企業サイトの違和感はどこ？",
+type:"contact",
+answer:"問い合わせボタンが見つけにくい",
+explain:"問い合わせ導線は目立つ位置に置く必要があります。"
+},
+
+{
+title:"ブログ記事ページの違和感はどこ？",
+type:"text",
+answer:"本文の文字が小さすぎる",
+explain:"文字サイズが小さいとスマホで読みにくくなります。"
+},
+
+{
+title:"予約サイトの違和感はどこ？",
+type:"button",
+answer:"予約ボタンの色が背景と同化している",
+explain:"重要ボタンは背景と差をつけて目立たせるべきです。"
+},
+
+{
+title:"サービスサイトの違和感はどこ？",
+type:"nav",
+answer:"ナビゲーションの項目が多すぎる",
+explain:"メニューが多すぎるとユーザーが迷います。"
+},
+
+{
+title:"LPの違和感はどこ？",
+type:"hero",
+answer:"最初に何のサイトか分かりにくい",
+explain:"ファーストビューで内容が伝わることが重要です。"
+},
+
+{
+title:"ログイン画面の違和感はどこ？",
+type:"form",
+answer:"入力欄のラベルが分かりにくい",
+explain:"フォームは入力内容が直感的に分かる必要があります。"
+},
+
+{
+title:"ニュースサイトの違和感はどこ？",
+type:"ad",
+answer:"広告が本文より目立ちすぎる",
+explain:"広告が強すぎるとUXが悪化します。"
+},
+
+{
+title:"スマホサイトの違和感はどこ？",
+type:"tap",
+answer:"押せる場所が小さすぎる",
+explain:"スマホはタップ領域を広めに取る必要があります。"
+},
+
+{
+title:"ランキングサイトの違和感はどこ？",
+type:"rank",
+answer:"1位の理由が書かれていない",
+explain:"ランキングは理由がないと説得力が下がります。"
+}
+
 ];
 
 let index = 0;
@@ -245,16 +370,16 @@ let score = 0;
 let answered = false;
 
 const choicesBase = [
-  "価格表示が不自然",
-  "問い合わせボタンが見つけにくい",
-  "本文の文字が小さすぎる",
-  "予約ボタンの色が背景と同化している",
-  "ナビゲーションの項目が多すぎる",
-  "最初に何のサイトか分かりにくい",
-  "入力欄のラベルが分かりにくい",
-  "広告が本文より目立ちすぎる",
-  "押せる場所が小さすぎる",
-  "1位の理由が書かれていない"
+"価格表示が不自然",
+"問い合わせボタンが見つけにくい",
+"本文の文字が小さすぎる",
+"予約ボタンの色が背景と同化している",
+"ナビゲーションの項目が多すぎる",
+"最初に何のサイトか分かりにくい",
+"入力欄のラベルが分かりにくい",
+"広告が本文より目立ちすぎる",
+"押せる場所が小さすぎる",
+"1位の理由が書かれていない"
 ];
 
 function shuffle(arr){
@@ -262,154 +387,263 @@ function shuffle(arr){
 }
 
 function renderMock(type){
-  let nav = `<span>ホーム</span><span>料金</span><span>事例</span><span>会社情報</span>`;
-  let heroTitle = "あなたの毎日を便利にするサービス";
-  let heroText = "シンプルで使いやすいWebサービスです。";
-  let buttonStyle = "";
-  let buttonText = "今すぐ始める";
-  let bodyStyle = "";
-  let extra = "";
 
-  if(type==="price"){
-    extra = `<div class="item"><h3>プレミアム商品</h3><p style="font-size:11px;color:#cbd5e1">価格：19,800円</p><p>高品質で人気の商品です。</p></div>`;
-  }else if(type==="contact"){
-    buttonStyle = "font-size:10px;padding:5px 8px;background:#64748b";
-    buttonText = "お問い合わせ";
-  }else if(type==="text"){
-    bodyStyle = "font-size:10px;line-height:1.2";
-  }else if(type==="button"){
-    buttonStyle = "background:#dbeafe;color:#dbeafe";
-    buttonText = "予約する";
-  }else if(type==="nav"){
-    nav = `<span>ホーム</span><span>料金</span><span>特徴</span><span>事例</span><span>ブログ</span><span>採用</span><span>会社情報</span><span>FAQ</span><span>資料</span>`;
-  }else if(type==="hero"){
-    heroTitle = "未来を変える、次世代の体験";
-    heroText = "革新的でスマートな価値をあなたへ。";
-  }else if(type==="form"){
-    extra = `
-      <div class="item" style="grid-column:span 3">
-        <h3>ログイン</h3>
-        <input placeholder="入力してください" style="width:100%;padding:12px;margin:6px 0;border:1px solid #cbd5e1;border-radius:8px">
-        <input placeholder="入力してください" style="width:100%;padding:12px;margin:6px 0;border:1px solid #cbd5e1;border-radius:8px">
-      </div>`;
-  }else if(type==="ad"){
-    extra = `<div style="background:#fde68a;color:#92400e;font-size:26px;font-weight:900;text-align:center;padding:30px;border-radius:14px;margin-bottom:16px">超大型広告エリア</div>`;
-  }else if(type==="tap"){
-    buttonStyle = "font-size:8px;padding:3px 5px";
-    buttonText = "詳細";
-  }else if(type==="rank"){
-    extra = `<div class="item"><h3>第1位 サービスA</h3><p>おすすめです。</p></div>`;
-  }
+let nav = `<span>ホーム</span><span>料金</span><span>事例</span><span>会社情報</span>`;
+let heroTitle = "あなたの毎日を便利にするサービス";
+let buttonStyle = "";
+let buttonText = "今すぐ始める";
+let bodyStyle = "";
+let extra = "";
 
-  return `
-    <div class="mock-site">
-      <div class="mock-header">
-        <div class="logo">SampleSite</div>
-        <div class="nav">${nav}</div>
-      </div>
-      <div class="mock-main" style="${bodyStyle}">
-        <div class="hero">
-          <h2>${heroTitle}</h2>
-          <p>${heroText}</p>
-          <span class="btn" style="${buttonStyle}">${buttonText}</span>
-        </div>
-        ${extra}
-        <div class="grid">
-          <div class="item"><h3>特徴1</h3><p>使いやすく、初心者にも分かりやすい設計です。</p></div>
-          <div class="item"><h3>特徴2</h3><p>スマホでもPCでも快適に利用できます。</p></div>
-          <div class="item"><h3>特徴3</h3><p>必要な情報をすぐに見つけられます。</p></div>
-        </div>
-      </div>
-    </div>
-  `;
+if(type==="price"){
+extra = `<div class="item"><h3>プレミアム商品</h3><p style="font-size:11px;color:#cbd5e1">価格：19,800円</p></div>`;
+}
+
+else if(type==="contact"){
+buttonStyle = "font-size:10px;padding:5px 8px;background:#64748b";
+buttonText = "お問い合わせ";
+}
+
+else if(type==="text"){
+bodyStyle = "font-size:10px";
+}
+
+else if(type==="button"){
+buttonStyle = "background:#dbeafe;color:#dbeafe";
+buttonText = "予約する";
+}
+
+else if(type==="nav"){
+nav = `<span>ホーム</span><span>料金</span><span>特徴</span><span>事例</span><span>ブログ</span><span>採用</span><span>FAQ</span><span>会社情報</span><span>資料</span>`;
+}
+
+else if(type==="hero"){
+heroTitle = "未来を変える次世代の体験";
+}
+
+else if(type==="form"){
+extra = `
+<div class="item" style="grid-column:span 3">
+<input placeholder="入力してください" style="width:100%;padding:12px;margin:6px 0;border-radius:8px;border:1px solid #cbd5e1">
+<input placeholder="入力してください" style="width:100%;padding:12px;margin:6px 0;border-radius:8px;border:1px solid #cbd5e1">
+</div>`;
+}
+
+else if(type==="ad"){
+extra = `<div style="background:#fde68a;padding:30px;font-size:28px;font-weight:900;text-align:center;border-radius:14px;margin-bottom:16px">超大型広告</div>`;
+}
+
+else if(type==="tap"){
+buttonStyle = "font-size:8px;padding:4px 5px";
+buttonText = "詳細";
+}
+
+else if(type==="rank"){
+extra = `<div class="item"><h3>第1位 サービスA</h3><p>おすすめです。</p></div>`;
+}
+
+return `
+<div class="mock-site">
+
+<div class="mock-header">
+<div class="logo">SampleSite</div>
+<div class="nav">${nav}</div>
+</div>
+
+<div class="mock-main" style="${bodyStyle}">
+
+<div class="hero">
+<h2>${heroTitle}</h2>
+<p>シンプルで使いやすいWebサービスです。</p>
+<span class="btn" style="${buttonStyle}">${buttonText}</span>
+</div>
+
+${extra}
+
+<div class="grid">
+
+<div class="item">
+<h3>特徴1</h3>
+<p>使いやすいUIです。</p>
+</div>
+
+<div class="item">
+<h3>特徴2</h3>
+<p>初心者でも安心。</p>
+</div>
+
+<div class="item">
+<h3>特徴3</h3>
+<p>スマホにも対応。</p>
+</div>
+
+</div>
+</div>
+</div>
+`;
 }
 
 function render(){
-  answered = false;
-  const q = questions[index];
-  document.getElementById("count").textContent = `問題 ${index+1} / ${questions.length}`;
-  document.getElementById("score").textContent = `スコア ${score}`;
 
-  const wrongs = choicesBase.filter(c => c !== q.answer);
-  const choices = shuffle([q.answer, ...shuffle(wrongs).slice(0,3)]);
+answered = false;
 
-  document.getElementById("app").innerHTML = `
-    <div class="game">
-      <div class="card">
-        ${renderMock(q.type)}
-      </div>
-      <div class="card">
-        <div class="question">${q.title}</div>
-        <p style="color:#cbd5e1">このWebサイトのUIで、一番違和感がある部分は？</p>
-        <div id="choices">
-          ${choices.map(c=>`<button class="choice" onclick="answer(this,'${c}')">${c}</button>`).join("")}
-        </div>
-        <div id="explain" class="explain"></div>
-      </div>
-    </div>
-  `;
+const q = questions[index];
+
+document.getElementById("count").textContent =
+`問題 ${index+1} / ${questions.length}`;
+
+document.getElementById("score").textContent =
+`スコア ${score}`;
+
+const wrongs = choicesBase.filter(c=>c!==q.answer);
+
+const choices =
+shuffle([q.answer,...shuffle(wrongs).slice(0,3)]);
+
+document.getElementById("app").innerHTML = `
+
+<div class="game">
+
+<div class="card">
+${renderMock(q.type)}
+</div>
+
+<div class="card">
+
+<div class="question">
+${q.title}
+</div>
+
+<p style="color:#cbd5e1">
+このUIの違和感は？
+</p>
+
+<div id="choices">
+
+${choices.map(c=>`
+<button class="choice"
+onclick="answer(this,'${c}')">
+${c}
+</button>
+`).join("")}
+
+</div>
+
+<div id="explain" class="explain"></div>
+
+</div>
+</div>
+`;
 }
 
-function answer(btn, selected){
-  if(answered) return;
-  answered = true;
-  const q = questions[index];
-  const buttons = document.querySelectorAll(".choice");
+function answer(btn,selected){
 
-  buttons.forEach(b=>{
-    if(b.textContent === q.answer) b.classList.add("correct");
-    if(b === btn && selected !== q.answer) b.classList.add("wrong");
-  });
+if(answered) return;
 
-  if(selected === q.answer){
-    score++;
-  }
+answered = true;
 
-  document.getElementById("score").textContent = `スコア ${score}`;
-  document.getElementById("explain").innerHTML = `
-    <strong>${selected === q.answer ? "正解！" : "不正解…"}</strong><br>
-    正解：${q.answer}<br>
-    ${q.explain}
-    <button class="next" onclick="next()">次の問題へ</button>
-  `;
+const q = questions[index];
 
-  setTimeout(()=>{
-    next();
-  },1800);
+const buttons = document.querySelectorAll(".choice");
+
+buttons.forEach(b=>{
+
+if(b.textContent===q.answer){
+b.classList.add("correct");
+}
+
+if(b===btn && selected!==q.answer){
+b.classList.add("wrong");
+}
+
+});
+
+if(selected===q.answer){
+score++;
+}
+
+document.getElementById("score").textContent =
+`スコア ${score}`;
+
+document.getElementById("explain").innerHTML = `
+<strong>
+${selected===q.answer ? "正解！" : "不正解"}
+</strong>
+<br><br>
+${q.explain}
+
+<button class="next" onclick="next()">
+次の問題へ
+</button>
+`;
+
+setTimeout(()=>{
+next();
+},1800);
+
 }
 
 function next(){
-  index++;
-  if(index >= questions.length){
-    finish();
-  }else{
-    render();
-  }
+
+index++;
+
+if(index >= questions.length){
+finish();
+}
+
+else{
+render();
+}
+
 }
 
 function finish(){
-  let comment = "";
-  if(score >= 9) comment = "かなりUIを見る目があります。Web改善・LP改善に向いています。";
-  else if(score >= 6) comment = "良い感じです。基本的なUIの違和感はかなり見抜けています。";
-  else comment = "まだ伸びしろありです。ボタン・文字サイズ・導線を意識すると上達します。";
 
-  document.getElementById("app").innerHTML = `
-    <div class="card result">
-      <h2>結果発表</h2>
-      <p style="font-size:24px">あなたのスコア：${score} / ${questions.length}</p>
-      <p>${comment}</p>
-      <button class="restart" onclick="restart()">もう一度遊ぶ</button>
-    </div>
-  `;
+let comment = "";
+
+if(score>=9){
+comment = "UIを見る目がかなりあります！";
+}
+
+else if(score>=6){
+comment = "かなり良い感じです！";
+}
+
+else{
+comment = "まだまだ伸びしろあり！";
+}
+
+document.getElementById("app").innerHTML = `
+
+<div class="card result">
+
+<h2>結果発表</h2>
+
+<p style="font-size:28px">
+${score} / ${questions.length}
+</p>
+
+<p>${comment}</p>
+
+<button class="restart" onclick="restart()">
+もう一度遊ぶ
+</button>
+
+</div>
+`;
 }
 
 function restart(){
-  index = 0;
-  score = 0;
-  render();
+
+index = 0;
+score = 0;
+
+render();
+
 }
 
 render();
+
 </script>
 
 </body>
